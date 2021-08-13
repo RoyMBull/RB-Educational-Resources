@@ -1,0 +1,99 @@
+/** Intro to NMAP
+    
+    TIP: * NMAP is easily detected for it is a noisy scanner.
+         * Free website to practice NMAP scans are -> scanme.nmap.org
+         * NMAP can scan 6500 ports, 1000 the base level by  default
+         * You can perform a scan via the IP address or the domain name of a target
+    
+    NMAP:
+
+        Commands/Options:
+
+            nmap: The NMAP command 
+            -v: Prints the version number of the server as well as more information about the scan.
+                You can use two v's to be even more verbose with your scans.
+            -A: Enables OS and version detection, also known as an aggressive scan 
+            -help: Displays all teh options available for NMAP 
+            -oG: Formats the output of the data from the scan 
+            -p: Scans the port of a target
+            -F: fast scan, scanning most commonly targeted ports. Scans 100 ports
+            -sV: Scans the version of the OS 
+            -sC: Scans with default NSE scripts (Nmap Scripting Engine) to automate the scan
+            -O: Remote OS detection using TCP/IP stack fingerprinting
+            -traceroute: Performs a traceroute command
+            -sn or -PI: Used to identify live targets on a subnet/or network via fast scan
+            -open: Provides only open ports from a target
+            -sl: Performs a IDLE scan in NMAP
+            NMAP -P 192.168.1-5 (1-5 is the range of subnets): Scanning Multiple Subnets with NMAP 
+            -oX: Nmap option that outputs the results in XML format
+            -sO: to see which ports have been left open on a network when using NMAP switches
+            Nmap -O -p80: can be used to perform stack fingerprinting in NMAP
+        
+        States:
+
+            Upon a scan, there is the State colum, which indicates teh state of a port
+
+            Filtered: 
+                If shown, indicates the port is filtered, meaning any packets 
+                sent to the port will be blocked by the firewall of the server in place.
+            
+            Open:
+
+                Indicates the port is open
+        
+        Port:
+
+            Upon a scan, there is the port colum, which indicates the port number of a port found 
+        
+        Service:
+
+            Upon a scan, there is the service colum which indicates what type of service is running on a 
+            live port.
+
+
+    How to initialize a scan:
+
+        In order to initiate a scan, enter the nmap command, followed by either the domain name 
+        or IP address of the target. By default, unless specified, NMAP will scan 1000 ports.
+            
+            EX:
+                nmap scan.nmap.org 
+    
+    How to scan a set of IP ranges:
+
+        NMAP allows you to scan a set of IP ranges of a target. To scan IP ranges use the following command 
+
+        EX: 
+
+            nmap -oG - 192.168.1.0-255 -vv 
+
+    Scanning ports:
+
+        After discovering live ports on a system, you can use the -p option to scan the live port. 
+
+        EX: 
+            nmap -oG 192.168.1.0-255 -p 22 -vv 
+        
+        OR: 
+
+            nmap scanme.nmap.org -p 22 
+    
+    Scanning OS versions of the OS:
+
+        nmap -A scanme.nmap.org
+
+    Finding services/service versions of an OS:
+
+        nmap -sV scanme.nmap.org
+
+    How to perform a fast scan: 
+
+        nmap -F scanme.nmap.org
+    
+    How to scan multiple targets:
+
+        nmap -F scanme.nmap.org www.google.com 
+       
+
+
+*//

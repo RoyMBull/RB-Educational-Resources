@@ -1,0 +1,181 @@
+/** Intro to SNORT IDS
+    
+    How to install snort on Linux:
+
+        sudo apt-get install snort  
+        * Next move to snort in the /etc directo
+    
+    Snort.Conf:
+
+        Hover over to the snort.conf file to view the configuration settings.
+        
+        ipvar HONE_NET:
+
+            This sets the snort IDS to monitor the IP address of the network you're on
+
+        include $RULE_PATH/RULEFILE.rules:
+
+            In the snort configuration file, this is how you include a set of rules for the IDS to use 
+                EX:
+                    include $RULE_PATH/MYRULES.rules
+
+    SNORT Syntax and Rule Actions:
+
+         Syntax:
+
+            <Rule Action> <Protocol> <Source IP Address> <Direction Operator> <Destination IP Address> <Destination Port>(Rule Options)
+            
+            EX:
+
+                The following fule below states that if there is any TCP connection from any soure IP/Port attempting to 
+                communicate with the network, to respond with a message.
+
+                    alet tcp any any -> $HOME_NET 21 (msg: "FTP connection attempt"; sid 1000001; rev:1;)
+
+            EX2:
+
+                Alerts when a SSH connection attempt is made on port 22
+                
+                    alert tcp any any -> 192.168.1.4 22 (msg: "Write Message")
+            
+            EX3:
+
+                Alerts when specific website is visited. This is how an IDS blocks certain websites someone can visit on a network
+                
+                    alert tcp any any -> $EXTERNAL_NET $HTTP PORTS (msg: "Write Message")
+
+            EX
+                
+
+        Rule Actions:
+
+            alert: 
+                
+                Upon discovery of malicious activity in network traffic, the IDS will generate an alert 
+                and then presume to log and report the activity for the administrator to sort over.
+            
+            log:
+
+                Upon discovery of malicious activity in network traffic, the IDS will simply log the incident 
+                for the administrator to sort over, no alert involved.
+
+            pass:
+
+                The IDS will perform a true negative and simply ignore the packet activity
+
+            activate:
+
+                Upon discovery of malicious activity in network traffic, the IDS will perform an alert action, 
+                which will also log the incident. The IDS will then perform an action, or a dynamic rule, in response 
+                to the discovered activity. A good example of this would be redirecting the traffic off the network or 
+                taking the service down for a period of time.
+
+            dynamic:
+
+                A conditional rule that only activates when called by the activate. 
+
+            drop:
+
+                Upon discovery of malicious activity in network traffic, the IDS will block the traffic/packet data, 
+                and the presume to log it's findings in the IDS log  
+            
+            reject:
+
+                Upon discovery of malicious activity in network traffic, the IDS will block the traffic/packet data, 
+                and the presume to send a TCP packet with the reset flag set. 
+
+            sdrop:
+
+                Upon discovery of malicious activity in network traffic, the IDS will only block the traffic/packet data, 
+                it will not log it. 
+
+        Source/Destination IP Address: 
+
+            $HOME_NET:
+                
+                Sets the source IP address
+            
+            $EXTERNAL_NET:
+
+                Sets the destination IP address
+        
+        Source/Destination Port:
+
+            any: 
+
+                Sets it to any port
+
+        Direction Operator:
+
+            ->:
+                
+                Indicates one way traffic
+            
+            <>:
+
+                Indicates bidirectional traffic                
+
+        Rule Options:
+
+            Rule options are stored in () at the end of your rule
+            general:
+
+                These options provide information about aboutt the rule but do not have any affect during detection 
+            
+            Payload:
+
+                These options all look for data inside the packet payload and can be inter-related.
+            
+            non-payload:
+
+                These options look for non-payload data. 
+
+            post-detection:
+
+                These options are rule specific triggers that happen after a rule has "fired". 
+
+            msg:
+                
+                Writes a message 
+
+            content:
+
+                Specifies a content, such as a DNS for example for if a specific website is visited
+            
+            sid:
+
+                An ID specific to the incident reported
+            
+            nocase: 
+
+                Observes a string without case sensitivity
+
+            rev:
+
+                the revision number of the rule (can leave it one or opt it out)
+
+        Protocol:
+
+            SNORT works with the following network protocols
+
+                * TCP
+                * UDP
+                * ICMP
+                * IP 
+    
+    Validating the configuration:
+
+        snort -T -c /etc/snort/snort.conf
+
+    Starting the SNORT IDS: 
+
+        snort -A console -q -c /etc/snort/snort.conf  #Remove the -q to get more information
+
+    Running the IDS in the background of the system:
+
+        snort -D -c /etc/snort/snort.conf -l /var/log/snort/
+
+    * In order to run snort in packet logged mode use the following command 
+                ./snort -dev -l ./log
+
+**/

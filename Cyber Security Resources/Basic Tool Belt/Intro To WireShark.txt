@@ -1,0 +1,120 @@
+/** Intro to WireShark
+    
+    Wireahark is a network traffic analysis tool that allows you to analyze network traffic data on the various interfaces of a system:
+    bluetooth, ethernet, WLAN, etc etc. It allows you to see the source and destination of packets, as well as the protocols involved. 
+    
+    WireShark also allows you to bring over network traffic data, for example, data from a sniff to capture a WPA/WPA2 4-way handshake.
+
+    * To Open Wireahark on linux enter the command -> wireshark 
+    
+    WireShark-Filters:
+
+        One of wiresharks unique features is it's filters, allowing you to sort and better view network traffic data. This sory of filtering 
+        makes it easier to locate certain kinds of traffic you're looking for, for example, a 4-way handshake in a WPA/WPA2 connection to authenticate 
+        devices connecting to a network. After you've performed a network scan to sniff out the handshake, you can take the captured traffic data, 
+        the cap file, to wireshark to closely analyze it and search for the handwhake containing the password.
+
+        Each of the filters below allow you to view different types of network traffic:
+
+        Filters:
+
+            IP FILTERS: 
+                
+                Filters network Traffic based on source and destination IP addresses
+
+                ip.addr:
+
+                    Allows you to filter network traffic data by either the source or destination IP address.
+                        EX:
+                            ip.addr == IPADDRESS 
+
+                ip.dst:
+
+                    Filters network traffic by destination IP address 
+                        EX:
+                            ip.dst == IPADDRESS
+
+                ip.src:
+
+                    Filters network traffic by source IP address
+                        EX:
+                            ip.src == IPADDRESS
+
+                ip.addr && ip.addr:
+
+                    Allows you to filter two different networks/hosts at the same tiem 
+                        EX:
+                            ip.addr == IPADDRESS && ip.addr == IPADDRESS
+
+                            OR:
+
+                            ip.src == IPADDRESS && ip.dst == IPADDRESS
+            
+            TCP FILTERS:
+
+                Filters network traffic based on TCP traffic data
+
+                eq: is used to set the value of a port number for a TCP filter. Can be applicable 
+                in any case where wish to specify a value relating to a protocol. 
+
+                tcp.port:
+
+                    Filters TCP network traffic by port number
+                        EX:
+                            tcp.port == PORTNUMBER 
+                
+                tcp.flags.reset:
+
+                    Filters TCP network traffic by TCP connections that have been terminated/reset 
+
+                        EX: 
+                            tcp.flags.reset == 1
+
+                tcp contains:
+
+                    Filters TCP network traffic by specific terms used, for example, packets 
+                    containing information related to facebook.
+                        EX:
+                            tcp contains facebook 
+
+                tcp.stream eq:
+
+                    Filters TCP network traffic to display TCP stream data 
+
+                tcp.seq:
+
+                    Filters TCP network traffic by sequence number
+
+                tcp.flags.push:
+
+                    Filters TCP network traffic by push events for troubleshooting purposes
+
+            HTTPS FILTERS:
+
+                https.request:
+
+                    Filters HTTP network traffic data to display HTTP GET and POST requests..
+                    This filter can also display most visited web pages.
+
+            !():
+
+                This is type of filter filters out certain types of network traffic data of no use to you
+                    EX:
+                        !(arp)
+                            This filters out any network traffic containing the address resolution protocol. 
+
+            udp contains:
+
+                Filters for certain HEX values at any offset 
+
+            dns.flags.rcode !:
+
+                Filters for any DNS requests that couldn't be resolved.
+
+
+            Displays the destination  
+            ip.dst
+
+            * The following Wireshark command wireshark -capture -local -masked 192.168.8.0 -range 24 
+          will run the capture against a specific set of IPs
+**/
