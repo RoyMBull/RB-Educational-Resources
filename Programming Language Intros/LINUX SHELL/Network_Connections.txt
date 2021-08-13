@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#	Network Connections
+#		ssh: securly log into a remote host, or run commands on it (syntax -> ssh [options] host [command])
+#			ex: ssh [options] google.com echo "hello we are here"
+#		-l: specify your remote username, otherwise shh assumes your local username
+#		-p: use a poer number other than the default port (22) (ex: ssh -p 22 -l myusername google.com)
+#		-t: allocate a tty on the remote system to run commands on an interactive UI 
+#		-v: produce verbose output for debugging 
+
+#		scp: securely copies files from one machine to another in batch
+#			ex: scp myfile detination
+#		-p: mirrors the file 
+#		-r: recursively copies a directory and it's contents
+#		-v; produce verbose output for debugging
+
+#		sftp: interactively with a UI copies files from one computer to another
+#		ftp: insecure manner of transferring files
+#		netcat: allows you to establish and make network connections

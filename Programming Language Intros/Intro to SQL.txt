@@ -1,0 +1,102 @@
+/** Intro to MYSQL Kali Linux terminal commands
+ 
+ //Creating a DataBase 
+    * How to start a MYSQL session in:
+        
+        service mysql start 
+        mysql -u root
+
+    * How to view th database: This shows the main database, containing your databases
+
+        show databases;
+
+    * How to create a database:
+
+        create database yourdatabasename;
+            ex: 
+                create databse Futaba;
+
+    * How to use a database: This moves you into one of the databases shown in the main database
+    * NOTE: to switch back to the main database, use the commnd:  use mysql
+        use databasename
+            ex:
+                use Futaba
+
+    * How to create a table in a database: YOU MUST DEFINE THE FIELDS WITH THIS METHOD
+        create table webs (name varchar(35), id int(5));
+
+    * How to view tables in a dataabse being viewed
+
+        show tables;
+
+    * How to insert information in a field in a specified table: FIELDS MUST BE DECLARED WHEN MAKING TABLE
+        
+        insert into webs (fields) value(value of fields in order)
+            ex:
+                insert into webs(id, username, firstname, lastname) value ('1', 'rbull14', 'roy', 'bull')
+
+    * How to view information in tables in databases:
+        
+       #Shows all the fields in the specified table
+        describe tablename;
+            ex:
+                describe webs
+
+       #Shows all the elements in a field in the specified table
+        select * from tablename;
+           ex: 
+                select * from webs;
+       
+       #Shows a specified element from a field in a specified table
+        select fieldelement from tablename;
+           ex:
+               select id from webs;
+
+       #Shows the number of rows a table has
+        select count(*) from webs;
+
+       #Shows a specified roy from a table
+        select * from webs where id='1'
+
+    
+    * How to edit information in tables in databases 
+      
+      #Deleting a row in a table
+        delete from tablename where fieldname='element';
+          ex: 
+              delete from webs where id='1';
+       
+      #Deleting a database
+        drop databasename;
+          ex:
+             drop Futaba;
+        
+      #Deleting a table in a database
+        drop tablename;
+          ex: 
+             drop webs;
+
+
+//Querying the database with SQL
+    
+    * Locate the database: =>  /var/lib/mysql
+    * use the command ls -la to display all information properly
+    * Secure the database if possible
+    * Create a SQL file that will script commands to the target
+    * Copy the path of your sql file 
+    * Enter the command: mysql -u username databasename < filepath 
+        ex: save databases you find in the mysql section to further study
+            mysql -u root Futaba < /home/futaba/Downloads/RB_Engineer/SQL/mysqlfile.txt
+
+    //Scripting 
+        You script your code while navigating through databases to write more effeciently
+
+    
+
+ //Navigating databases (navigating patterns and other tips and tricks)
+    * Show all tables to gather information about all the tables in a database
+    * Describe tables of interest to find all the fields, and as a means to learn about the table
+    * Display all information about the table if fields are of interest 
+    * 
+    
+    

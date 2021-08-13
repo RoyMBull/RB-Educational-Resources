@@ -1,0 +1,19 @@
+Linux Pocket Guide sections to reference
+	-Printing 
+	-Disks and FileSystems
+	-Backups and remote storage
+	-Viewing Processes 
+	-Controling Processes
+	-Secheduling Jobs
+	-Users and their enviornment
+	-Host information
+	-Host Location
+	-Network Connections
+//	-Email
+//	-Instant Messaging 
+	-Graphics
+//	-Dates and Times 
+
+//[on hold]
+
+Write scripts for all sections to work on learning the terminal better 

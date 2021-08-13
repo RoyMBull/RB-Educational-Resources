@@ -1,0 +1,221 @@
+first project is going to cover (16-30)
+	the goal of the project is to simply css all of the intro to css page
+second project will cover (31-46)
+
+<style type="text/css"> 
+:this is the standard default that must go in the header to write css
+
+p {color:blue;}
+
+in css the tag is an id used to edit it's contents
+	ex: <p> is simply
+		p{}
+
+
+selector{property: value}: 
+selector: the element you wish to change
+property: what to change about the element
+value: what you wish to change the element to
+
+
+</style>
+
+PROPERTIES IN CSS:
+color: changes the color of set appropriate element
+	ex:  element{color:blue;}
+
+	font-family: changes the font of appropriate element
+	ex: element{font-family:arial;}
+
+font-style: changes the style of the text
+
+font-weight allows us to bold the text using css
+
+line-height: changes the spacing in between lines for paragraphs
+	NOTE: default spacing is at 100% (1-100)
+	ex: element{line-height:percent of spacing
+
+text-align: changes the alignment of the text	
+	ex: element{text-align:(center, justfied, left, or right);}
+
+text-indent: changes the indent of paragraph pixels
+	ex: element{text-indent:23px;}
+
+background-color: changes the color of the background
+
+background-image: sets the background to an image
+	ex: element{background-image:url(image type)
+	ex(scaling the tiling of images)
+		background-repeat:no-repeat;
+
+background-repeat: scales the tile and axis images repeat on
+	ex: backgroun-repeat:repeat-x (this is left and right axis)
+									(y is up and down axix)
+
+background-position: changes the position of the background image
+	ex: background-position:10px, 50px(2 paramaters are far from left, and far from top)
+										(percentages are applicable here)
+
+padding: changes the spacing between the border and it's contents of text
+	ex: paddingL20px(padding all around)
+padding-top: adds pixels of pad to the top part of the boarder
+padding-bottom: adds padding to the bottom of a border
+
+
+border-color:changes the color of the border
+border-width:changes the width of the border
+border-style:change the style of the border
+
+	NOTE: MIX UPS CAN BE DONE IN CSS AS SUCH
+		border-top-color: enter stuff
+		
+margin: this property allows you to change the size of the margin (the space outside the border-color
+	ex: margin:40px;
+	
+width: changes the width of the border's pixels
+height: changes the height of the border's pixels
+boarder: allows you to call multiple values for a property of an element
+		ex: border: 3px solid black;
+		
+		
+STATES OF THE LINK ELEMENT: link, visited, hover, active
+text-decoration: can underline or place a line straight through a link
+
+this is the default state of a link, before you click it
+a:link  
+{
+	text-decoration:none;
+
+}
+
+this is the state of what the color of a link looks like ater you've clicked it
+a:visited 
+{
+	color:green;
+}
+
+this is the state of a link while hovering over it
+a:hovering
+{
+	background-color:blue;
+	font-weight:bold;
+	color:blue;
+	text-decoration:underline;
+	
+}
+
+this is the active state for while you are holding the click button on the link, essentially clicking on a link
+a:active
+{
+	background-color:orange;
+}
+
+list-style-type: this changes how the bullet points look 
+	ex: list-style-type:katakana;
+
+list-style-image: this sets the bullet point background as an image
+	ex: list-style-image:url(imagetype);
+	
+HOW TO APPLY CSS TO MULTIPLE ELEMENTS AT A TIME
+
+	ex:
+		h1, p, body {}
+		
+span: special tag that gives custom modification to content in a main tag
+			
+			span{
+					color:blue;
+					}
+	ex: <p> some <span> content is </span> in here </p>
+	
+div: is a positioning tag that give the ability to move content inside aroun
+	ex:
+		div {
+				top: 40px;
+				down: 50px;
+				right: 50px;
+				left: 80px;
+				
+				
+				
+class: allows us to distrubute properties to give to elements of our html
+	ex: all classes are declared by '.'
+			.redtext{color:red}
+			classes are called by 
+			ex: 
+				<p class="redtext">
+				
+how to make id for div's
+	ex: id's are established by '#'
+	
+		#someid {
+				some stuff
+				}
+				
+		<div id="someid"> someshdf stuff </div>
+		
+child selectors: allows us to modify a spefic element with a specific property instead of 
+				generalizing an overall change to all properties of same type of the html file
+				ex: 
+					all link elements, in relation to all paragraphs will have their color 
+						text color changed to blue
+					p > ability{
+									color:blue;
+					}
+					
+external style sheet: a css file to be imported accress all html files if need be
+	ex: calling the import
+	Note: to override a css file you simply write the basic style setup and write the change
+			there AFTER, NOT BEFORE THE WRITTEN CODE CALLING THE CSS FILE
+	
+		<link> rel="stylesheet" type="text/css" href="stylesheetname"
+		
+		
+POSITIONING IN CSS:
+absolute: allows you to place any element in an exact location of choice
+		issue: overlap is plausable
+relative: positions relative to where you were before in your code
+		can come in handy when you wana relatively place like items together
+		issue: can leave gaps 
+fixed: postioning where propeties stay in the same position no matter how 
+		you move the page. useful for keeping menue bars and stuff visible wherever you move in the page
+
+max width and height, and min: provides a set standard for how one particular elment will be sized when
+	used in html files(images, files, borders, etc
+	ex:
+	img {
+		max-height: 200px;
+		max-width: 20px;
+		}
+		
+forms: the way you input data to give to a website
+	ex: user names, checkboxes,etc etc
+		nametheproperty: <what it is and does>
+			Username: <input type="text name="name of the form" size="how many characters can be veiws" maxlength="how many characters can be entered" value"description of what the box is for"/>
+			
+how make a check box and rabio button i css:
+	radio:
+			male: <input type="radio" name="name the radio button" value="male"/>
+	checkbox:
+			bacon <input type="checkbox" name="bacon" value="bacon/>
+			
+drop down list: a drop select list of elements
+	
+	ex:
+	what will the example be
+	<select name="activites">
+		<option value"play">play the guitar</option>
+			
+		</select>
+		
+Text Area:
+	Creates a big text field
+	ex:
+			<textarea rows="increases height" cols="expands width">
+			
+			</textarea>
+		
+how to make a button in css w/Javascript
+	<input type="button" value="click me" onclick="FunctionName" />
+how to write some code in the css w/javascript to make an event handler
+	<input type="button" value="click_here" onclick="alert('ahhh!!!');"

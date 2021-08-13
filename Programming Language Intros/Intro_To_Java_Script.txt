@@ -1,0 +1,396 @@
+WHEREVER IT SAYS "IN JAVASCRIPT" I AM REFFERING TO THE CODE NEEDING TO BE PLACED IN THE SCRIPT TAG FOR JAVASCRIPT
+
+
+
+Comments:
+	"//" is for comments
+	"/* ending with */" is for long ongoing comments
+	
+Statements:
+	Outputting to the screen: document.write()
+		document.write("Hello World")
+		
+	declaring variables: var
+		var types are declared like python, not with int, string, float, etc etc like c++
+		var somevar = 23
+	
+	functions in java script
+		
+		function: just like bash scriptng we call functions "function" and then the name
+			//this is how to make a pop up in java script
+			function making a pop up()
+			{
+				alert("enter text for the pop up to display
+			
+			}
+	How to convert strings to int/float using the "parse" command
+		ex:
+			var someval = prompt("enter a value here");
+			var somevalconverted = parseInt(someval);
+
+	Input in JavaScript:
+		var somevar = prompt("enter some text here");
+		//this function gives a pop box with dialogue with a text box waiting for user input
+	how to make decisions in javascript
+		function popup()
+		{
+			var x = 34;
+		var n = 34;
+	
+			if(x==n)
+			{
+		document.write("yay");
+			}
+	
+		}
+		
+	complex conditions in javascript: the condition of complex conditions in javascript is to test conditions to run a condition	
+		ex: note this works in c++ as well
+		if( (x!=n) && (x==p) )
+	{
+		document.write("yay");
+	}
+	
+	Switch case statements in javascrit:
+	
+		function popup()
+{
+	var girl = "natlie";
+	
+	switch(girl)
+	{
+		case "natalie":
+			document.write("this code workkkks");
+			break;
+		default:
+			document.write("404");
+	
+	}
+	
+}
+
+FLOW CONTROL IN JAJASCRIPT: complex conditions are also plausable 
+	For-Loops:
+	
+	//javascript starts counting at 1
+	for(x=0; x<5; x++)
+	{
+		document.write("hello world");
+	
+	}
+	
+	while(1)
+	{
+		document.write("done");
+		break;
+	}
+	
+	
+Event Handler in javascript:
+	<form> 
+<input type="button" value="click_here" onclick="alert('ahhh!!!'); alert('here');"
+
+
+
+</form>
+
+On Mouse Hover event handler:
+	OnMouseOver: pops up an alert box for when you hover over a link
+	<a href="https://google.com" onMouseOver="alert('heeeeey');"> Hover </a>
+
+	OnMouseOut: pops up a pop up add for if you hover over a link
+<a href="https://google.com" onMouseOut="alert('heeeeey');"> Hover </a>
+
+How to enable a pop up once a page starts up
+	ex:
+	<body>
+		<a href="https://google.com" onLoad="alert('heeeeey');"> Hover </a>
+			opens on start up of the webpage
+			OR
+			
+		<a href="https://google.com" onUnload="alert('heeeeey');"> Hover </a>
+			called when the web page or browser is closed 
+	
+	</body>
+	
+	
+	
+OOP in JavaScript: OOP is done NOT in the body BUT in the head of the html file just like css for the html
+	creating objects in JavaScript
+		Keywords:
+			this: references the current object we're working on. kind of like "self" in python.
+			
+		ex: making a constructor/function for OOP
+			function constructor_test()
+			{
+				this.name = "here";
+				
+			}
+			
+		ex: making a new object to call our var/functions
+			var myobject = new constructor_test()
+			
+		ex: using the object
+			myobject.constructor_test();
+			
+Object initializers for JavaScrit:
+	nameofobject = {nameofproperty: "Somedode here", number:24};
+	
+	someobj = {name: "Tayler", age:24};
+	
+		call it as someobj.name in our case document.write(someobj.name);
+		
+METHODS in JavaScript:
+	Method: functions that use properties of objects to perform
+			functions this is backwards compared to c++ and JavaScript	
+			where we write out our class functions, and the objects just serve
+			to call them
+			
+			in here objects ARE the functions and variables, and we call them in functions,
+			to create class like functions, we then call around as needed in our code
+			
+	Note: when calling the function we declare it in the object function
+		function object()
+		{
+			this.callfunction = myfunction;
+		}
+		
+		function myfunction()
+		{
+			document.write("hello world");
+		}
+		
+		var obj = new object();
+		
+		
+	calling the function:
+		obj.callfunction();
+		
+HOW I INTEND TO UTILIZE METHODS AND OBJECTS IN JAVASCRIPT:
+	
+	ex:
+	
+	I can declare all the variables i need in here, the object,
+		fucntion OBJ()
+		{
+		
+		//and then ha
+			this.RunfstFunc = func_for_obj;
+		
+		}
+		
+	and then I can have them used in here to build the module of whatever I needd
+	
+		function func_for_obj()
+		{
+			document.write("Hellow World");
+			//next make a pop up window
+			
+			alert("Hellowwwwww");
+		}
+		
+	var objForOBJ = new OBJ();
+	
+	now we simply call the function as follows
+
+//I think Javascript calls object functions using the document.write() function
+	document.write(objForOBJ.RunfstFunc());
+	objForOBJ.RunfstFunc();
+		
+ARRAYS in JavaScript:
+	var arrayele = new Array("bucky", "tommy", "hannah", "mikey");
+	
+	to access the array we need the index:
+		document.write(arrayele[0]);
+		
+		
+how to set a finite list:
+	var things = new Array(3);
+
+		things[0] = 1;
+		things[1] = 2;
+		things[2] = 4;
+	
+How to dynamically make an array (this is called vectors in c++):
+	make the shell first
+	
+	var things = new Array();
+		things[0] = 1;
+		things[1] = 2;
+		things[2] = 4;
+
+
+Propeties and methods with Arrays in JavaScript:
+METHOD (  CONCAT()  ):
+	var things = new Array("bucky", "Hannah", "mars");
+	// the length function .length tells the length of strings, arrays, etc etc
+	
+	document.write(things.length)
+	
+	var second = new Array("bucky", "Hannah", "mars");
+	
+	method: combining arrays using the "concat()" function
+	
+		var combined = things.concat(second);
+
+METHOD (Join method):
+	This method takes an array and converts it to a string
+	
+		var things = new Array("bucky", "Hannah", "mars");
+		//converting to a string
+			var string1 = things.join();
+			document.write(string1);
+		//how to add a separator, much like a comma to separate the list. must be of the same type as your array
+		
+			var string1 = things.join("-");
+			document.write(string1);
+			//now our list will have hypens instead of comas to separate each element
+METHOD (Pop):
+	This methos removes, or "pops" the last element from an array
+	
+		var things = new Array("bucky", "Hannah", "mars");
+		things.pop();
+		
+		//now the last element is gone and will show up as undefined
+		
+		
+METHOD (REVERSE):
+	This method reverses the order of an array
+	
+		var things = new Array("bucky", "Hannah", "mars");
+		//now we reverse it
+		things.reverse();
+		
+METHOD (PUSH):
+	This method appends an element onto the end of your array (just like vectors in c+++)
+	
+		var things = new Array("bucky", "Hannah", "mars");
+		//now we append something
+		things.push("here");
+		
+METHOD(SORT):
+	This method sorts all elements in the array in alphabetical order
+	
+		var things = new Array("bucky", "Hannah", "mars");
+		//now we alphabetize this
+		things.sort();
+		
+
+		
+METHOD make a loop that runs 3 times and can store elements
+
+	for me to do this i would:
+		write the array first, a dynamic one
+		make the for loop
+		prompt the user on each countin
+		then push to the arrray
+		after it runs we then document.write(), writing out the join() of that array
+	
+	
+METHOD (Printing an Array based off of the length. can be combined with sort())
+
+	var things = new Array("bucky", "Hannah", "mars");
+	things.sort();
+	
+	
+	for(a=0; a<things.length;a++)
+	{
+		//this for loop will run after we'fe made any changes or have done what ever to the array element
+		//however this for loop will still be able to recognize the amount of elements, whether they've been sorted or not, and still
+		//print them out as desired back to you in the form of a downward list
+	}
+
+	
+METHOD (ASSOCIATIVE ARRAY):
+	Associates elements in arrays with other elements
+	ex:
+		somele["color"] = "blue";
+		document.write( "the color of this is" + somele["color"]
+		
+
+		
+		
+Math in JavaScript: (New method)
+	The math method is "Math" followed by a "." and the function of what is to be calculated
+		ex:
+			answer = Math."sqr, E, etc etc"
+				answer = Math.sqrt(somenumvartocalculate);
+
+Date Objects in JavaScript:
+
+function printTime()
+{
+	var gettime = new Date();
+	//now we set new variable equal to our date object calling other functions 
+		ex:
+			hours = gettime.gethours()
+			hours = gettime.getSeconds();
+			hours = gettime.getMinutes();
+}
+
+setInterval("thefunctionbeingcalled", intervalnumberinmilliseconds);
+	ex:
+		setInterval("printTime()", 1000);
+		
+Accessing Forms in JavaScript:
+	<form>
+		Username: <input type="text" />
+		Password: <input type="password" />
+		<input type="submit" value="Submit" />
+	
+	</form>
+	
+	
+	<script type ="text/javascript">
+		//how to access the form array, the number of a particular form
+		//Javascript by default creates a dynamic array for forms to access
+		
+		var x = document.forms[0].length;
+		document.write(x);
+	</script>
+	
+Accessing Form Elements in JavaScript:
+
+	<form name="ThisIsMyForm">
+		Username: <input type="text" name="Username" />
+		Password: <input type="password" name="Password"/>
+		<input type="submit" value="Submit" />
+	
+	</form>
+	
+	
+	<script type ="text/javascript">
+		//how to access the form array, the number of a particular form
+		//Javascript by default creates a dynamic array for forms to access
+		
+		var x = document.forms[0].elements[0].name;
+			//the name object identifies the name of the element of 
+			//the form array
+		document.write(x);
+		
+		//How to access using the name of the form array instead
+		var x = document.ThisIsMyForm[0].NameOfElement.name;
+	</script>
+	
+Form Validation:
+(we are inside the script for the header)
+
+	function validator()
+	{
+		if(document.MyCheckBoxForm.mybox.checked)
+			alert("this is checked");
+			
+		else {
+			alert("NOTE CHECKED!!!!");
+		}
+	}
+	
+	
+<body>
+<form name"MyCheckBoxForm">
+	<input type="checkbox" name="mybox" />
+	<input type="button" value="MyButton" name="somebutton" onClick="call our function above!!! the validator() in our case" />
+
+</form>
+
+</body>

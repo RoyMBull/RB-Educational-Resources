@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#	Viewing processes
+#		
+#		ps: lists all processes of the machine
+#		-ux: lists all processes 
+#		-U: lists all processes of a specific user (ex ps -U username)
+#		-C: lists all processes of a specific program (ex ps -C chrome)
+#		-tN: lists all processes on terminal 
+#		-p1: lists all processes of a particular process (ex ps -p 1, 456, 657)
+#		-ef: lists processes with command line turncated to width view
+#		-efww: lists processes with full command line
+#		-efH: lists processes in threaded view, with indeted child processes 
+# Useful: -ux, -C, -p1, -tN, -U
+#		uptime: lists how long the system has been running since the last boot
+#	
+#		w: prints the processes runnning in each shell for all users 
+#
+#		top: displays the most active processes in the system at set interval times
+#		-n: (ex top -n 45) -> performs certain number of updates of processes every set number of seconds, in our case, every 45 seconds, then quits
+#		-d: (ex top -d 45) -> updates the display a certain number of seconds 
+#		-p: (ex top -p 1340 -p 430) -> lists processes and updates for up to 20 select processes
+#		-c: (ex top -c) -> displays te command line arguments of processes
+#		-b: (ex top -b) -> prints to standard output without displaying screen tricks, noniteractively 
+# Useful: -n, -d, -p, -c 

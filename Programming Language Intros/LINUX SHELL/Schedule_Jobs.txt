@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#	Schedule jobs
+#
+#	sleep: delays until runtime of next command 
+#		(ex sleep 45) -> sleeps and delays next line of execution for 45 seconds
+
+#	watch: executes a command at a set interval (default is 2 seconds)
+#	   -n: (ex watch -n 45 date) -> executes a set command/program every number of seconds
+#	   -d: (ex watch -n 45 -d date) -> highlights the differences that have changed during each execution
+#	   -g: (ex watch -n 3 -g date) -> exits when there is a difference in production of output from the command
+#
+#	at: executes a command at set time in the future
+#	crontab: executes a set number of jobs at certain time frames, and is contained in a crontab file
+#		How to make a crontab file 
+#			ex: crontab myfile
+#		-e: (ex crontab -e myfile) -> allows you to edit your crontab file 
+#		-l: (ex crontab -l myfile) -> prints the contents of your crontab file
+#		-r: (ex crontab -r myfile) -> removes your crontab file
+#		Writing a crontab: each line may contain only one job, six fields, first 5 for specific time to run the job, and then the last field for the job itself
+#		ex:
+#			->syntax ( * * * * * *), (minute, hour, day_of_month, dec, consisten_day of week) (leave the star symbols for the blanks, leaving all empty if you wish 
+#							to have the file run every minute by default))
+#			ex: 45 9 30 dec 6 echo "this is working" -> on every saturday, including december 30th, at 9:45pm, run the command echo "this is working"

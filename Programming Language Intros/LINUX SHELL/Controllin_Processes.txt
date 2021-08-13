@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+#	kill: kills processes by process id, or by program name, followed by it's process id
+#	-pidof: (ex pidof emacs) -> prints the process id of a program by it's name
+#			(ex kill pidof emacs) -> kills the process by it's name, 
+#	-killall: kills processes for a given program, containing it's own set of processes (ex killall emacs)
+#	
+#	timeout: stops a given process under a certain time ulimit
+#			ex( sleep 60 )
+#	timeout time process:	ex( timeout 10 sleep 60)
+#	flock: uses a lock file per shell, per shells, to ensure multiple copies of one file aren't permissable to run
+#			each command is tied to a lock file variable 

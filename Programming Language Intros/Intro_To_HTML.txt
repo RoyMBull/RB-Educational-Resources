@@ -1,0 +1,105 @@
+first set of code will start at the vide 9 mark for the tutorials
+
+tags to know for html
+<!doctype html>: tells the browser what kind of document it's looking at. used once and is placed at the top of every html page
+
+<html>
+
+:this entire thing is the body of your html document, starts with and ends with /, meaning the end of the body
+/: this refers to the end of the body of something
+
+</html>
+
+<head>
+: all browser information is stored here: key word searches, search engines, the technical stuff the title of the tab name
+</head>
+
+<body>
+: pics, images, the visual stuff that we see goes here
+</body>
+
+<title>
+:gives the title of the body of something
+</title>
+
+<h1>
+: headers go from largest to smallest (h1-h6)
+:is essentially the header for the body of your web page
+</h1>
+
+<p>
+:paragaphs for the body. you need this set up so that the browser understands separate paragraphs
+</p>
+
+<br />: this tag tells the code where line breaks occur in paragraphs. forward slashes always accompany single tags
+
+<hr />: places a line in the website 
+
+<strong>
+: bolds all text
+</strong>
+
+
+<em>
+: italizizes all text
+</em>
+
+<!--     -->: how to leave comments in html
+<a title="write the title for the link to show when hovering over it> </a>
+<a> 
+:this stands for adding a link 
+:to add the location write the beginign of the tag like this :->   <a href="link name">
+: if it's your webpage, the location will look like this : -->   <a loca=="filename.html"
+</a>
+
+<a href="#thedestinationname></a>
+
+<a name="the destination name on the current html file"> </a>
+
+<a href="mailto:email address> </a>
+
+<img src="name of the file"/>: this is how you place an image into a website
+<a href="source name">
+	<img src="image name"/>: this is how you place the contents of a link into an image
+</a>
+
+<img src="imagename" height="dimension number" />: this is how to resize an image in our html code
+
+<table>
+:this is a table without borders 
+	the thing is t
+</table>
+
+
+<table border="set the number for the border thickness">
+
+<table width" can set using a number or a percentage value. this gives the advantage of setting the table to change in size depending on the size of the browser cellpadding="number to set the space
+between the border and text in the rows of the data table >
+	<tr>
+	<th></th>: this is for a table header>
+		<td></td>
+		<td></td>
+		<td></td>
+	
+	</tr>
+
+
+</table>
+
+
+How to take input in Html:
+types: password, text, checkbox, button
+	YourIdentifier : <input type = "enter the type here"
+	
+How div works in Html
+div is like functions in html markup language, also another way to organize and reposition stuff inside
+id's are placed inside to identify them in the css 
+		ex:
+		
+			<div id = "Mydiv"> 
+			
+					<p> this is my function in the markup language </p>
+			</div>
+
+
+

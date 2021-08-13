@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#	Graphics in Bash 
+#		display: displays an image file
+#			ex  display futaba.jpg
+#		
+#		convert: converts files from one format to another
+#			ex:  convert futaba.jpg newcopy.png
+#			ex: convert futaba.jpg -resize 50% newfile.jpg
+#		mogrify: does the same as convert, doesn't make a copy, and instead modifies only copy present. safer to user convert 

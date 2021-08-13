@@ -1,0 +1,27 @@
+
+Intro to JavaFx/CSS
+
+            //Creating a theme for javafx applications
+            
+            //Sample 1: Default one's
+            setUserAgentStylesheet(STYLESHEET_CASPIAN);
+            
+            //Sample 2: Implementing our CSS stylesheet
+            scene.getStylesheets().add("somefile.css");
+            
+            //Sample 2: Setting the style of individual modules
+            Label label = new Label("HI there");
+            label.setStyle("-fx-text-fill: aliceblue");
+            
+            /** 
+	       
+               .root{ //Edits the elements of the GUI window
+		-fx-background-color: #383838;
+		}
+
+               .label
+               {
+               		//edits the elements of all labels in the app
+               }
+             */
+            

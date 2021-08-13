@@ -1,0 +1,35 @@
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.control.TextField;
+import javafx.geometry.Insets;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
+import javafx.stage.Modality;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import com.sun.glass.ui.Menu;
+import com.sun.glass.ui.MenuItem;
+import com.sun.glass.ui.MenuBar;
+import javafx.scene.layout.BorderPane;
+import javafx.geometry.*;
+
+
+//Secondary when working with menus, includes all control options on javafx eclipse
+package application; //this is used when working with eclipse
+import javafx.application.Application;  
+import javafx.scene.Scene;  
+import javafx.scene.control.*;  
+import javafx.scene.layout.BorderPane;  
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.stage.Stage; 

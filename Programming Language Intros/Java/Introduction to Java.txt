@@ -1,0 +1,238 @@
+//How to import a library/module in java
+import java.util.Scanner;
+
+//How to make a class/Function in Java
+class Main
+{
+    public static void main(String args[])
+    {
+    
+    }
+}
+
+//Printing to the screen
+class HelloWorld
+{
+    public static void main(String args[])
+    {
+        System.out.println("Hello World");
+    }
+}
+
+//Taking User input
+class UserInput
+{
+    public static void main(String args[])
+    {   
+        //Create our scanner variable 
+        Scanner somevar = new Scanner(System.in);
+
+        //Taking string input
+        //Declare the appropriate type to hold the input value
+        String newvar = somevar.nextLine();
+
+        System.out.println(newvar);
+
+    }
+}
+
+//if and else statements in Java
+class IfElseStatements
+{
+    public static void main(String args[])
+    {
+       Scanner somevar = new Scanner(System.in);
+        
+       userinput = somevar.nextLine();
+
+       if (userinput == "hello")
+        {
+            System.out.println(userinput);
+        }
+
+        else if (userinput == "me")
+        {
+            System.out.println(userinput);
+        }
+
+        else {
+            System.out.println("INVALID INPUT");
+        }
+    }
+}
+
+//Switch Statements in Java
+class UserInput
+{
+    public static void main(String args[])
+    {
+        Scanner somevar = new Scanner(System.in);
+        
+        userinput = somevar.nextLine();
+
+        switch (userinput)
+        {
+            case '1':
+                System.out.println("Works");
+                break;
+        }
+
+    }
+}
+
+//While Loops
+class WhileLoop
+{
+    public static void main(String args[])
+    {
+       Scanner somevar = new Scanner(System.in);
+        
+       
+        
+       while (true)
+       {
+            userinput = somevar.nextLine();
+
+            if (userinput == "hello")
+            {
+                System.out.println(userinput);
+            }
+
+            else if (userinput == "me")
+            {
+                System.out.println(userinput);
+            }   
+            
+            else if (userinput == "exit")
+            {
+                break;
+            }
+
+            else 
+            {
+                System.out.println("INVALID INPUT");
+            }
+
+       }
+       
+    }
+}
+
+
+//For Loops
+class ForLoop
+{
+    public static void main(String args[])
+    {
+       Scanner somevar = new Scanner(System.in);
+        
+       
+        
+       for (int a = 0; a <= 10; a++)
+       {
+            userinput = somevar.nextLine();
+
+            if (userinput == "hello")
+            {
+                System.out.println(userinput);
+            }
+
+            else if (userinput == "me")
+            {
+                System.out.println(userinput);
+            }   
+            
+            else if (userinput == "exit")
+            {
+                break;
+            }
+
+            else 
+            {
+                System.out.println("INVALID INPUT");
+            }
+
+       }
+       
+    }
+}
+
+
+//Multiple classe/Functions in Java (OOP in Java)
+
+//Define the public class/function
+public class Function 
+{
+    public void simpleMessage()
+    {
+        System.out.println("This is another class");
+    }
+}
+
+
+class Main
+{
+    public static void main(Strings args[])
+    {
+        //Use the class
+        Function Runprog = new Function();
+
+        //Call a method from the class
+        Runprog.simpleMessage();
+    }
+}
+
+//Making arrays in Java
+class Arrays
+{
+    public static void main(String args[])
+    {
+        //Creating a array to append values to
+        int array[] = new int[10];
+
+        array[0] = 87;
+
+        //Creating a array with pre-defined values
+        int newarray[]= {1, 2, 3, 4, 5, 6, 7};
+
+        System.out.println(array[0]);
+    }
+}
+
+//Public, Private. and this in Java
+public class Function 
+{   private int = 1;
+
+    public void simpleMessage()
+    {   
+        //this is like self in python, where the variable belongs to the native function
+        this.somevar = 4;
+        System.out.println("This is another class");
+    }
+}
+
+//Inheritance in Java
+public class Function 
+{
+    public void simpleMessage()
+    {
+        System.out.println("This is another class");
+    }
+}
+
+public class NewFunction extends Function
+{
+    public void simpleFunction()
+    {
+        System.out.println("This class inherits the one before")
+    }
+}
+
+class Main
+{
+    public static void main(String args[])
+    {
+        NewFunction newObject = new NewFunction();
+        newObject.simpleMessage();
+    }
+}

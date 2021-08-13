@@ -1,0 +1,32 @@
+#!bin/bash
+#How to use touch in Bash scripting to
+#Create files
+#Update file modification times (use touch using the 
+#same file name to update the time of the file
+#Ex
+
+touch myfile
+
+touch myfile 
+#The retpying of this command updates the time. Can be useful
+#for keeping track of time per seconds for beginning scripters
+
+#New Tac (" - ") command
+#-d (Stands for directory
+#-r (Stands for remove)
+#-f (Stands for file)
+
+#How to test if a directory exists or not (Can be used to run many 
+#lines of neccessary script 
+
+#Ex
+if [-d ~/Desktop/Myfile]
+then 
+#Now the syntax for this is as follows
+#-d to search directories, then the address of the location 
+#of the directory
+
+#Essentialls the syntax is
+#check the type of what you are looking for(file, directory, etc etc)
+#And check if it exists in it's assumed address
+

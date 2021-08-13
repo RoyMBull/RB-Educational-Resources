@@ -1,0 +1,211 @@
+#!/usr/bin/env bash
+#	Disks and File Systems in Bash 
+#	sda(first block): disks, hard drives, and USB's are partitioned here
+#	sdb(second block):
+#	sd0(third block): CD-ROM's are partitioned here
+
+#	df: lisks all disk partitions 
+#		-h: (ex df -h la ) -> lists all disk partitions in a human readable format
+#		-k: lists all partitions, sizes in kilobytes
+#		-m: lists all partitions, sizes in megabytes 
+#		-B: (ex df -B numberofbytes) -> lists all partitions, sizes in bytes 
+#		-H: changes the unit slightly for the size printed 
+#		-l: displays all local filesystems, not networking ones
+#		-T: include the file system type in the output
+#		-t: (ex df -h -t ext4) -> displays all filesystems of desired type)
+#		-x: (ex df -h -x ext4) -> doesn't display file types entered
+#		-i:
+#		
+		
+#		mount/unmount: Syntax: ->  mount [options] device | directory
+#		ALL THE MAJOR FILE SSTEMS ARE IN DIRECTORT "/" AND ARE FED INTO THE TABLE OF THE ETC
+#				ex:  mount /dev/sda0 mydir NOTE: in order to change mount you must use "umount" to unmount the current filesystem before moving it to another dir to gain access
+#				makes disk partitions accessable/inaccessable to directories via superuser (can be useful for clonning), giving permissable access under the sudo privelage 
+#		-t: (ex sudo mount -t ext4 dev/sda1 /home/drive) -> mounts a specific filetype to the dir
+#		-l: (ex sudo mount -l) -> lists all mounted filetypes
+#		-a: (ex sudo mount -a) -> Mounts all filesystems in the /etc/fstab file (can be possibly overwritten for hacking)
+#		-r: (ex sudo mount -r) -> mounts the filesystem read-only
+#`			Note: the /etc/ftab is important and holds the filesystem mount tables, and refers to it when you try to mount a file system, and it understands to mount
+				# similar file system types
+#		fsck: performs a repair on drive (if running manually, unmount first)
+#		eject: can eject disks
+#			
+#		
+#
+
+function df_human_readable
+{
+	df -h -la 
+}
+
+function df_Kilo
+{
+	df -k
+}
+
+function df_Mega
+{
+	df -m
+}
+
+function df_Bytes
+{
+	df -B
+}
+
+function df_H
+{
+	df -H
+}
+
+function df_Local_Only
+{
+	df -l
+}
+
+function df_Types
+{
+	df -T
+}
+
+
+
+function df_i 
+{
+	df -i
+}
+
+function Specific_Type_Only
+{yourtype2="enter_type_here"
+	cat AvailableTypes.txt
+	read yourtype2
+	df -x $yourtype2
+	echo "enter r to repeat"
+	read response2
+		if [ $response2 == "r" ];
+		then 
+			Specific_Type_Only
+		fi 
+	Main_Hub
+	
+}
+function Specify_Type 
+{yourtype="enter_type_here"
+	cat AvailableTypes.txt
+	read yourtype
+	df -t $yourtype
+	echo "enter r to repeat"
+	read response
+		if [ $response == "r" ];
+		then 
+			Specify_Type
+		fi 
+	Main_Hub
+	
+	
+}
+function Loop_through_Viewings 
+{
+	clear 
+	echo "Listing File systems>>>>>" 
+	sleep 1 
+	
+	while [ 1 ]
+	do 
+		df_human_readable
+		sleep 4 
+		
+		df_Kilo
+		sleep 4 
+		
+		df_Mega
+		sleep 4 
+		
+		df_Local_Only
+		sleep 4 
+		
+		df_Types
+		sleep 4 
+		
+		df_Bytes
+		sleep 4 
+		
+		df_H
+		sleep 4 
+		
+		df_i 
+		sleep 4 
+		
+	done 
+		
+		
+}
+
+function Main_Hub
+{listnow="listings"
+	echo "File_System_listings"
+	echo "All: all"
+	echo "Display types desired: t"
+	echo "Types to not display: x"
+		read listnow
+		
+			if [ $listnow == "all" ];
+			then 
+				Loop_through_Viewings
+			fi 
+			
+			if [ $listnow == "t" ];
+			then 
+				Specify_Type
+			fi 
+			
+			if [ $listnow == "x" ];
+			then 
+				Specific_Type_Only
+			fi 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

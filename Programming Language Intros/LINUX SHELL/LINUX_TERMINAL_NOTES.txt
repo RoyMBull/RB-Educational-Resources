@@ -1,0 +1,310 @@
+NOTE: When you create a file or directory, owener is also assigned ot a group
+
+mkdir: Creates a directory
+	EX: mkdir myname
+rmdir: Removes a directory
+	EXl rmdir myname
+rm: removes a file
+
+*: Wild card. This performs an action that will affect all things of the same type
+	EX: rm *:WIll REMOVE ALL FILES
+	    rmdir * WILL REMOVE ALL DIRECTORIES
+	    rm *.jpg: WILL REMOVE ALL .JPG FILES
+	    rmdir * Desktop: WILL REMOVE ALL DIRECTORIES OF THE SAME TYPE
+touch: Creates a file (just add the type of file you wish to create at the end, ".cpp, .py", etc etc)
+	EX: touch Bacon
+cp: Coppies a file or directory
+	EX: cp Bacon Bacon2 
+mv: Moves a directory
+	EX: mv Bacon (Directories name)/Bacon
+
+grep: searches and checks a file, directory, or application
+	EX: grep (the key word) Bacon(you can do this from MULTIPLE FILES)
+
+diff: Compares the difference between 2 files and then displays those differences
+	EX: diff Bacon Corn
+
+passwd: Allows you to change your password
+
+echo: allows you to print txt to the screen
+	EX: echo Hello World
+	EX(Echo a variable): echo $($lets the system know your variable is a variable)(varable)
+				echo $name
+
+Create a variable in the terminal: (variable)=(contents. NO SPACES ACCEPTABLE!!!!!)
+	EX: name=hey
+info: Looks up info about commands
+	EX: info (your command as the second argumentls
+
+ls >: shows you all the files you've created in a directory
+	EX: ls > (your filename of choice to create with it's own type, ".cpp, .py", etc)
+
+pwd >> : Shows you all the cd path's the user has taken
+	EX: pwd >> (your filename of choice to create with it's own type, ".cpp, .py", etc)
+
+sudo Breakdown:
+s = super
+u = user
+do = do, as in do something
+sudo = super user do
+
+sudo: Grants system administravtive priveleges to the system. Must be used in higher level command executions
+	EX: Deleting directories, installing updates and apps, etc etc, administrative priveleges any system has
+
+
+How files work in genreal:
+-> Can read
+-> Can write
+-> And can execute it
+
+-rwx rw- r--(Command level privelages for files:
+- rwx(Admin level command): Original owner can: READ, WRITE, AND EXECUTE THE FILE
+rw(command for the group): Group (not sure what group) can READ AND WRITE THE FILE
+r--(command accessible to all): locals can ONLY READ THE FILE
+
+Level of Privelages:
+u - user
+g - group
+o -other (Everyone else, the locals
+
+How to change the levels of privelege for modificatios of files and documents:
+
+chmod: ALlows you to change the levl of privelage for use
+(How to add permissions)EX: chmod o+w (your file or directore name) 
+(How to take away permissions)EX: chmod o-w (your file or directore name) 
+
+(How to configure all permissions):
+4 - stands for "read"
+2 - stands for "write"
+1 - stands for "execute"
+0 - stands for "no permisions
+7 - stands for "Give the ability of all permissions
+
+NOTE: YOU CAN ADD NUMBERS TO ACHIEVE PLACEMENT FOR ADDNG PERMISIONS
+	EX: 754
+	5 IS = 4, READ, + 1, EXECUTE, -rx
+
+OR... YOU CAN JUST USE THE LETTERS TO
+
+
+How to call up written code in the terminal to do something
+-> Go to the file's directory
+->use the syntax: (language name) (filename.(yourfile type)
+
+	EX: python dsr100-tsts.py
+
+TAB: Simply hit tab for the terminal to assume what you are typing. This also pulls up ALL possible commands for each letter alphebatized
+	commands
+lcd: ALlows you to change local directories. A directory, the parent, has other directories, the children. YOu can change between
+	the offspring directories using lcd, which is not cd, which allows you to change parrent directories
+
+How to compress and extract files in the CLI:
+TIP: When trying to interact with files or irectories that have spaces, add a slash
+EX: Me\ in\ this\ house
+
+gzip: Compresses fils
+	EX: gzip (files name)
+gunzip: Extracts files 
+	EX: gunzip (filename).gz
+
+Terminal interaction:
+ctrl-shift-T: opens new tab in your terminal
+ctrl-shift-N: Opens New terminal from current terminal
+
+How to compress multiple files into a file type (.tar, .gz, .py, etc):
+cvs:
+c(Create mode): creates something
+v(Display output): Displays output to the terminal
+f(FIle options):
+x(Extract): Extracts compressed files (for tar we know so far, just use gunzip for .gz files) 
+
+	HOW TO DO THIS FOR TAR FILES:
+	EX: tar cvf (creates and displays that file type) (Directory location) (enter your files
+	EX: tar cvf Storemyfileshere.tar Grocery\ list favoritememe
+
+	IF YOU WANT TO EXTRACT:
+	EX: tar cvf (location)
+
+How to set up different user accounts:
+sudo useradd: Adds new user
+	EX: sudo useradd Lini
+
+Groups in Linux Shell: Allows permission setting for a class of users
+Each file created has the owner, and the group. By default the owner belongs to that group
+	Users of that group can also have access to the files on the system
+	However you can add or remove users from that group, or simply make a new group with 
+	New users, giving them permission to access the files and directories
+
+groupadd: adds group to the user's system
+usermod: Allows you to modify permissions for users
+	EX: sudo groupadd (name your group)
+	    (Enter in your password)
+	    sudo usermod
+-a: append, to add user
+-G: add user to another group
+-g: change primary group of the user (adds her to another group, she becmoes a member of 2 groups)
+	EX: sudo groupadd SpecialC
+	   (enter your password)
+ 	sudo usermod -a(to add or subtract) -g (the group name) (user you wish to add to the group
+
+sudo userdel: Deletes user from the system
+		EX: sudo userdel (user name)
+
+NOTE: TO GO BACK MORE THAT ONE DIRECTORY SIMPLY USE (cd ../..) the slash adds another jump back 
+
+
+How to find out where passwords are stored:
+
+Go into directory (/), then enter the directory etc
+Next sudo cat shadow, which shows all the encripted passwords in the system
+
+Password symbols:
+:x: = All passwords are stored in file shadow
+:*: = User can't login (other purposes
+NOT HAVING AN :x: SIGNIFIES THAT THERE IS NO PASSWORD, LEAVING A VULNERABILITY
+
+
+file name (passwd): displays all Id information about everythign encrypted in the system
+file name (shadow): contains the actual encrypted passwords
+
+How to list all running processes
+
+ps: process that lists all running processes
+	EX: 
+	ps (hit enter)
+
+	 PID  TTY          TIME   CMD
+ 	2881  pts/4    00:00:00   bash
+	20007 pts/4     00:00:00  ps
+
+	PID: asssigns running processes ID's
+	TTY: Terminal where the process is running from
+	TIME: cpu time the process took up (number increases as more cpu time/stress is used)
+	
+	
+
+ps ax: shows you all running processes you own, as well as ones in the background, etc etc
+	EX: ps ax (hit enter)
+
+How to initiate a process:
+	EX: (THE PROCESSE'S NAME) (hit enter)
+		xlogo
+
+NOTE: WHEN YOU INITIATE A PROCESS FROM THE TERMINAL, YOU CANNOT REGAIN CONTROL OF THE TERMINAL UNTIL TEH PROCESS IS DONE RUNNING. USE CONTROL C TO END PROGRAM
+
+How to run a program in the background of the terminal
+	EX: (THE PROCESSE'S NAME) &
+		xlogo &
+
+		[2] 20146
+		([2] = job number attatched to proess ID)
+		Job:The type of process that is running
+
+
+fg %:Allows you to regain control of the process and terminate it manually from the terminal
+fg(for ground): brings background running processes back to user control
+ctrl-z: freezes/halts a proccess the program itself will not respond when you interact with it
+
+NOTE: fg %1, for ctrl-z, will resume the program with any actions you tried to make. Meaning if
+you tried to close the program at some point the program will continue running and read your last
+commands.
+
+kill: ALlows you to kill running processess using the process ID, the PID
+	EX: kill 20260 (PID for xlogo)
+	    kill -STOP (PID) (this freezes the process)
+	    kill -CONT (PID) (this resumes the process)
+NOTE: YOU CAN ONLY KILL PROCESSES YOU OWN
+	TO KILL SYSTEM PROCESS USE SUDO
+	EX: sudo kill (process)
+
+Directory (/): the heart of all main processes
+Directory (~): The main directory for accessing your user account's directories. 
+
+
+How to "locate" and find something in either existing directoy "~" or "/"
+
+locate: Locates an existing item or file on the user profile
+
+EX: locate rockyou.txt
+The command will pull up the following directory location
+
+	/usr/share/.... etc etc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

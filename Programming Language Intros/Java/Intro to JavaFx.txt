@@ -1,0 +1,150 @@
+/** INTRO TO JAVAFX
+    
+    launch(args); //Place this in the main function to launch our application
+
+    @Override
+	public void start(Stage somevar) throws Exception
+	   {
+		//This is an override function that runs our application
+		//The function MUST BE NAMED "start" and have "throws Exception"
+		//Otherwise the program will fail. The "Stage" variable can be named anything.
+	   }
+    
+    Stage: Allows us to create and show a window to the user
+        Ex: Stage somevar = new Stage();
+        
+        somevar.setTitle(""); Sets the title of a window
+        somevar.setScene(ourlayout, 400, 500); Sets the scene of the window The other numbers reference width and length of the window
+        somevar.show(); Shows the window
+        somvar.showAndWait(); Makes it so that previous windows cannot be accessed until the current one is closed
+    
+    Button: Allows us to add buttons to our application
+        Ex: Button somevar = new Button();
+
+        somevar.setText(""); Sets the text of the buttons name 
+
+    TextField: Makes a text box where we can take input
+	Ex: TextField somevar = new TextField();
+	
+	somevar.getText(); //Allows us to take user input
+	
+
+    Layout Types:
+        HBox: Alligns all items in horizontal order
+        VBox: Alligns all items in a vertical order 
+        StackPane: Alligns items from botton-to-top
+
+		somevar.setPadding(new Insets(20, 20, 20, 20)); //Allows our layout object to pad
+
+    CheckBox: Adds a check box to the scene of an application
+	Ex: CheckBox somevar = new CheckBox("Checkboxname");
+	
+	    somevar.setSelected(true); //Pre-checks the box for you
+
+	 if (cb.isSelected()) //Performs an action if the checkbox is selected
+            {
+               System.out.println("Check Box Selected");
+            }
+    ChoiceBox: Adds a drop down choice menu the user can select from 
+            
+            Ex: ChoiceBox somevar = new ChoiceBox();
+            
+            somevar.getItems().add("apples"); // Adds to the list
+            
+            somevar.getItems().addAll("pie", "cake"); //Adds multiple items to the list
+                        
+            somevar.setValue("pie"); //Presets the choice box
+
+	    cxb.getSelectionModel().selectedItemProperty().addListener((v, oldvalue, newvalue) -> System.out.println(newvalue)); //Gives us the functional of an action upon selecting an item
+
+
+	    //Performs an action based on what is checked in the box
+	    ChoiceBox<String> somevar = cxb;
+                    String clist = somevar.getValue();
+                    
+                    if (clist == "pie")
+                    {
+                    	System.out.println("Hello World");
+                    }
+
+    ComboBox: Creates a hybrid choice box which you can also enter input into
+
+	    ComboBox<String> combobox = new ComboBox<>();
+            
+            combobox.getItems().addAll("Apples", "Pie", "Pizza");
+            
+            combobox.setPromptText("Enter here");
+            
+            combobox.setEditable(true);
+
+
+    ListView: Displays a list of items
+	    
+	    Ex: ListView<String> listview = new ListView<>();
+            
+            listview.getItems().addAll("Baconn", "Cinamon", "Pop tarts");
+            
+            listview.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+    TreeItem & TreeView: Displays a list of options as a dree menu
+
+    //Main tree
+    TreeItem<String> games = new TreeItem<>();
+            games.setExpanded(true);
+            	
+            //Sub Trees
+            	TreeItem<String> fantasyGenre = new TreeItem<>("Fantasy");
+            	fantasyGenre.setExpanded(true);
+            	games.getChildren().add(fantasyGenre);
+            		
+            		//Sub Tree Contents
+            			TreeItem<String> destiny = new TreeItem<>("Destiny");
+            			fantasyGenre.getChildren().add(destiny);
+            //Lists our tree	
+            TreeView<String> gamesTree = new TreeView<>(games);
+            gamesTree.setShowRoot(false);
+            gamesTree.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
+            	if (newValue != null)
+            	{
+            		System.out.println(newValue);
+            	}
+            });
+
+     //Creating a Menu in JavaFx
+     BorderPane layout = new BorderPane();
+            Scene scene = new Scene(layout, 400, 400); //Sets the dimensions of the window, width & Length
+            
+            //Add Contents
+            
+            // ... next to new menu item indicates a new window will open
+            // > next to a menu item indicates a tree list
+            // Nothing next to a menu item indicates it's a singular option
+            
+            //Create the Menu bar
+            MenuBar menbar = new MenuBar();
+            
+            	//Add Menu Options
+            	Menu menu = new Menu("File");
+            	
+            		//Add items to those options
+            		            		            		
+            		//Sample 1: Addes basic menu title
+            		menu.getItems().add(new MenuItem("New..."));
+            		menu.getItems().add(new SeparatorMenuItem());
+            		menu.getItems().add(new MenuItem("New"));
+            		
+            		//Sample 2: Adds menu item that responds on click
+            		MenuItem newfile = new MenuItem("Nnn");
+            		newfile.setOnAction(e -> System.out.println("He"));
+            		menu.getItems().add(newfile);
+            		
+            		//Sample 3:
+            		
+            //Add Menu to the bar and set it to the borderpane
+            menbar.getMenus().add(menu);
+            layout.setTop(menbar);
+            
+	
+
+ **/
+

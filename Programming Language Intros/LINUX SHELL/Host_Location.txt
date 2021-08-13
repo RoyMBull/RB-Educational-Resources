@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#	Host Location
+#		host: looks up hostnames, ip addresses, and dns info (syntax -> host [options] name [server])
+#			ex: host www.ubuntu.org
+#			ex2: host 91.189.90.41
+#			ex3: host google.com ubuntu.com (can be listed in order to retrieve information)
+#		  -a: displays all information available
+#		  -t: displays the type of nameserver query
+
+#		whois: looks up the registration of an internet domain
+#		   -h: performs look up at registers server
+#		   -p: querey the TCP port instead of the default 43 port (whois service)
+
+#		ping: tests if remote host is reachable by sending IMCP packets 
+#			ex: ping google.com 
+
+#		tracerout: prints the route from your local host to a remote one and records the time 
+#				ex: traceroute google.com

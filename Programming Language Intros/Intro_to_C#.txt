@@ -1,0 +1,275 @@
+How to print to the screen in C#:
+	Console.WriteLine("Hello World");
+
+How to take input in C#:
+	datatype nameofvar = Console.ReadLine();
+	Console.WriteLine(nameofvar);
+.MaxValue in C#:
+	attatched to variables of number data types, the maximum highest
+		number is set to output by default
+		ex:	
+		int somenumber = int.MaxValue;
+		
+How to generate a random number using the "Random" data type in C#:
+	ex:
+		Random randnum = new Random();
+		Console.WriteLine("Random Number between 1 and 10" + (rand.Next(1, 10))) <-you specify the range in the Next()
+		
+Type Casting in C#:
+	double pi = 3.45;
+	int convertpi = (int)pi;
+	
+if statements in C#:
+
+	int age = 17;
+	if (age >=5)
+	{
+		Console.WriteLine("Hello World");
+	}
+	
+Teranary Operator in C#:
+This is based off of the shorthand method in 
+
+int somevar = age>=16?true:false;
+	if this condition is true, age is assigned and converted to the int somevar
+
+Switch statements in C#:
+	Switch(age)
+	{
+	case 0: Console.WriteLine("This changed");
+		break;
+		default: Console.WriteLine("Not here");
+		
+	
+	}
+
+Loops in C#: Note C# also has Continue 
+	while (age < 10)
+	{
+		Console.WriteLine("I am root");
+			//quick example on how to run 
+			if (age == 7)
+			{
+				age++;
+				continue;
+			}
+	}
+	
+Break in C#:
+	break breaks us out of loops and case statements (switch)
+	
+do while:
+	The opposite of while loops, the code runs first, and then is 
+	checked if it can or should run again
+	do {
+	
+		Console.WriteLine("ue");
+		
+		} while (age <=5);
+		
+for loop:
+	for(int a=0; a<=4;a++)
+	{
+		Console.WriteLine("this runs");
+	
+	}
+	
+foreach in C#:
+	Cycles through every item in an array or collection (string for example)
+	ex:
+	string randStr = "here is some text"
+		foreach(char c in randStr)
+		{	//we are taking each individual, placing it in c and taking it from in var "randStr"
+			//char from string var "randStr" 
+			Console.WriteLine(c);
+		}
+		
+		
+StringBuilder in C#:
+	Gives the append Dynamically to a sting, essentiall building a string collection
+	ex:
+		StringBuilder somevar = new StringBuilder();
+		
+		somevar.append("This is some new line of text");
+			.Replace: replaces contents of the stringbuilder var: letters, words, etc
+			.ToString(): needed to convert StringBuilder var to string when Console.WriteLine()
+			
+			
+Arrays in C#:
+	declaring an array:
+		int[]somearray;	
+	declaring with set given number of elements:
+		int[]somearray = new int[5];
+	declaring an array while writing out the elements
+		int[]somearray = {1, 2, 3, 4, 5};
+		.Length: gives the length of a string collection or array
+			ex:
+				Console.WriteLine(somearray[2].length);
+				
+	outputting array element:
+		Console.WriteLine(somearray[2]);
+		
+Lists in C#: (is like Vectors in C++ and lists in Python)
+	dynamically expands automatically
+	List: the datatype to initialize lists
+		List<datatype> varname = new List<datatype>(this paramater can take arrays of same type, turning the array into a list);
+		.Add: this appends to a lists
+			somevar.Add(3);
+		How to add arrays to lists
+			somevar.AddRange(arrayname);
+			
+		.insert: Allows us to insert an item into a certain index/element of a list
+			
+			Somevar.insert(1, 10);
+			
+		.Remove: Removes given index of list
+			Somevar.Remove(5);
+			
+		.RemoveAt: Removes given index at a certain position of the list
+			Somevar.RemoveAt(2);
+			
+		.Contains: gives the item in a list you are specifically looking for
+			Somevar.Contains(5);
+			
+		.Sort: Sorts the list in alphabetize or numerical order
+			Somevar.Sort();
+			
+Exception Handling:
+	Keeps errors from going out to user or software
+		try: is used to test code that might have errors
+		
+		try
+		{
+			Console.WriteLine("writing some code now");
+		}
+		
+		Exception types for:DivideByZeroException, InvalidOperations, Exception
+		catch(DivideByZeroException ex)
+		{
+			Console.WriteLine("Caught an error");
+			//getting more information on the exception
+				Console.WriteLine("ex.GetType().Name);
+				Console.WriteLine(ex.Message);
+			//how to throw an exception from another exceeption onto the block of where
+				the current exception is taking place
+				throw ex;
+				//throwing a new one
+				throw new InvalidOperationException("Operation Failed", ex);
+		}
+		
+		catch(Exception ex)
+		{
+			This catches all exceptions 
+		}
+		
+Classes in C#
+level of permission is assigned per variable, per function, per item, unlike the section for it in C++
+		class: a way to make methods and objects, grouping functions and variables in levels of access permissable
+		in areas in the code. 
+			
+			getters and setters:
+			get: limits access
+			set: allows for the usage of setting certain values
+				
+			  //these here are attributes we've defined to be get and set
+			 
+			 //these in a sense are global variables for classes
+				public double height{get;set}
+				public double weigt {get;set}
+				public string soung {get;set}
+				
+				public string name;
+				public string Name
+				{
+					get{return name;}
+					set{name = value;}
+					
+					//value is an attribute that must be used when making setters
+					//get uses the return attribute to limit access to only what has been returned
+				}
+			
+			Constructors:
+			public MyConstructor()
+			{
+				this: like javascript, and the "self" of python, "this" refers to the variable of a 
+						class objects, and must be used for us to interact with the class variable or functions
+						
+						this.weight = 0;
+			}
+			
+			
+			static: has value shared by every object
+					static items are unable to access non static items
+				public static int mystaticitem()
+				{	
+						some code;
+				}	
+			
+How to make objects in C#:
+	Syntax: ClassName objectname = new ClassName
+	{
+		some code here; 
+		//note since this is an object of class animal it doesn't need to used
+		"this" when refering to items around the class. 
+		
+	
+	};
+subclasses: gets all of the attributes..... INHERITENCE/POLYMORPHISM
+	class dog: Animal
+	{
+		public Dog(): base()
+		{
+			this.favoritefood = "no favorite food";
+		}
+	}
+	
+super class: initializes all items and elements of base class base()
+
+abstract classes: can only inherit one abstract class per class
+		Note: You can't create an object outside of an abstract class nor instantiate it
+		
+		ex:
+		
+		abstract class Shape
+		{
+			public abstract double area();
+			public void sayHi()
+			{
+				Console.WriteLine("Hello");
+				}
+		
+		}	
+interface: uses abstract methods. Note that there is no need to write abstract when using objects of abstract classes
+
+		public interface InterFaceName
+		{
+			//in order to inherit/use this interface, the abstract class must be used
+		}
+		
+Generic/generic classes: you don't have to specify the data type of an element in a class or in a method
+	ex:
+	class KeyValue<TKey, TValue>
+	{
+		public TKey key {get;set}
+		
+	}
+	
+	
+File I/O: How to input and output to a file in C#
+	StreamWriter: Creates and writes to a file
+		using(StreamWriter Variablename = new StreamWriter("textfilename"))
+			{
+				variablename.WriteLine("any form of text");
+			}
+			
+			
+			
+		string storelineforreadfilename = "";
+		using(StreamReader Variablename = new StreamReader("textfilename"))
+		{
+			while(Variablename.ReadLine() != null)
+			{
+				Console.ReadLine(storelineforreadfilename);
+			}
+			
+		}

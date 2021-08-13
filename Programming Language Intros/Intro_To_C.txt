@@ -1,0 +1,209 @@
+TO ANYONE VIEWING THIS FILE LEARN C++ FIRST. THIS FILE IS BASICALLY A QUICK
+	REFERENCE ON THE DIFFERENCES BETWEEN SOME CHANGES MADE FROM C TO C++
+	
+
+How to print to the screen in C:
+	printf("Hello world\n");
+		the \n means endl; in C
+			\a plays an alert noise in computer when the code runs
+			
+How to write comments in C:
+	/*
+		this is how you make comments in C 
+	*/
+	
+	// is a short comment in C
+	
+Conversion characters in C:
+	printf("%s is the best person is the best person ever\n", "Bucky");
+		the console will print out "bucks is the best programmer ever
+		each %s will be able to take a 1 substitute in order of each being made
+		
+		%s = string substitute
+		%d = decimal (if using to substitute in a string of text, the number
+				will be converted to a string, which it is being substituted for
+		%f = float 
+			to round by place we do
+				%.2f (rounds 2 to the tenth's place)
+		%p: pointers 
+Variables in C:
+
+	printf("hello world", 65, " is someone here to tell me\n")
+		the print setup for this is the same as python
+		
+	int, string, void, float, char
+	
+string terminator in C:
+	tells C where the end of strings are.
+	
+Arrays in C:
+	char name[13] = "the is te tl "	
+			keeps count on how many bytes are being used in memory with arrays
+	how to change elements in string arrays
+		strcpy(arrayname, "name of new item")
+		
+Header Files in C:
+	const: value for any variable where it NEVER changes 
+	#define: a way to make constant variables
+		#define THISVAR "NEVERCHANGE"
+		
+	#include " ": add this, like in C++, with the files name in the quotes
+					to have access to it
+					
+How to take input in C using scanf:
+	scanf("%s", &storehere)
+		this is basically like getline in C++
+
+Typecasting in C:
+	how to temporarily change data type/convet them
+	ex:
+		float someavg;
+		int anitemnun;
+		int somenumtwo;
+		
+		float = ( float(anitemnun) * float(somenumtwo) )
+		
+shorthand if else statements in C:
+	(somevarelement == 654)? EnterTrueCode : EnterFalseCode;
+	practical for short quick decisions, NOT long lines of code 
+	
+keyword "continue" in C:
+	ignores certain conditionals. In loops, if a loop was intended to stop
+	runing under a certain condition, the loop will continue
+	
+Puts and gets in C:
+	2 WAYS OF PRINTING STRINGS TO THE SCREENA AND GETTING STRINGS FROM THE USER (Essentially the getline allowing spaces for input)
+	
+		ex:
+		//this is a variable place holder for character input up to 200 char
+		//we could leave it blank to ignore length
+		char somecharlength[200];
+		
+		put("What does the cat say");
+		//we use get in order to store the taken input at "somecharlength"
+		get("somecharlength");
+		
+Floor & Ceil in C: Rounds, basically the set precision of floats. Simply tye cast a float value with either "ceil", round up, or "floor" round down
+	ex:
+	
+	float somefloat = 4.534;
+	
+		printf(floor(somefloat));
+		
+
+Pointers in C:
+	Pointer: Points to the memory address of variables 
+	%p: this is the syntax referecne to pointers
+	&: is used to indicate the address of something
+		ex:
+			int thevariablename
+			int * pointerthevariablename = &thevariablename
+			printf("%p%, &thevariablename");
+
+	Dereference Pointer:
+	&PointerName: this, now dereferences the memory address of what the pointer is supossed to show and instead prints the actual value	
+		ex:
+		
+			int somevar;
+			int *pointSomeVar = &somevar;
+			
+			printf(&pointSomeVar);
+Heap in C: Left over memory your computer isn't using 
+			all variables and functions, etc etc, take up space in your memory, and in order to acces and expand it we use the heap
+		
+		malloc:allocate/get memory from heap
+		sizeof():(shows the size of the bytes of a variable) 
+		free(): relinquishes memory allocated from the systems memory
+		  
+		  //our pointer is going to point to the first item in the heap and get as much memory as wee need)
+			int * points;
+	
+	points = (int *) maloc(5 * sizeof(int));
+	free(points);
+	
+structs:
+	EX:
+		struct mystruct
+		{
+			char[40] name = "roy"
+			int age = "22";
+			float income = "56.44
+			
+		
+		};
+		
+		
+		
+		int main()
+		{
+			struct mystruct USINGstruct;
+			USINGstruct.
+	
+	
+	}
+	
+	
+Files in C: Sequantial, Random
+Sequential: in order access
+random: random access
+	
+	Syntax:
+		w: writes to a files
+		r: reads to a file
+		a: appends to a file
+		w+: allows the ability to write and read from a file
+		fopen(): opens file
+		fclose(): closes the file and relinqueshes memory back to the computer
+		fprintf(): allows you to write to a file
+		FILE * yourfilepointersname;
+		fgets: gets the line of the file 
+		fseek(): takes file pointer and allows for you to hop anywhere in the file via your cursor
+		SEEK_SET:Beggining of cursor point
+		SEEK_END: end of cursor point
+		
+		
+	EX:Opening and writing to a file
+		FILE * MyFile;
+		
+		MyFile = fopen("MyFileName.txt", "w");
+		fprintf(MyFile, "Write to the file here");
+		fclose(MyFile);
+	
+	EX:Reading from a file
+	
+		MyFile = fopen("MyFileName.txt", "r");
+		
+		//this char array will control how many lines of characters show per line
+		char stringLine[150]
+		
+		while(!feof(MyFile))
+		{
+			fgets(singleLine, 150, MyFile)
+			fprintf(MyFile);
+		
+		}
+		
+		fclose(MyFile);
+		
+	EX: Append to a file
+		
+		MyFile = fopen("MyFileName.txt", "a");
+		fprintf(MyFile, "\n- write some text afte the backslash tack");
+		
+		fclose(MyFile);
+		
+	EX: Random File Access (Kind of Like Grep in Linux)
+	
+		MyFile = fopen("MyFileName.txt", "w+r");
+		
+		fseek(MyFile, 7 (make number negative to move back), SEEK_SET);
+		
+		fseek(MyFile, 7, SEEK_END);
+
+		
+		fclose(MyFile);
+		
+
+		
+		
+		

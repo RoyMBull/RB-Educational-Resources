@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#	Host information
+
+#	uname: prints basic system information
+#	   -a: prints all information about the system
+#	   -s: prints only the kernel name
+#	   -n: prints only the hostname
+#	   -r: only the kernel release 
+#	   -v: only the kernel version
+#	   -m: only the hardware name
+#	   -p: only the processor type
+#	   -i: only the hardware platform
+#	   -o: only the operating system name
+
+#	hostname: displays the host name and allows you to change the hostname 
+#		changing the host name
+#			ex: hostname newnameforhost (must be super user to do this)
+#		  -i: prints the host's ip address
+#		  -a: print host's alias name
+#		  -s: print your host's short name
+#		  -f: print your hosts fully qualified name
+#		  -d: print your hosts DNS domain name
+#		  -y: print your hosts NIS or YP domain name
+#		  -F hostfile: set your hostname by reading the name from file hostfile 
+
+#	domainname: prints the domainname, (use -y)
+#
+#	ip: displays and sets various aspects of your computer's network interface (default is usually etho0)
+#		addr: displays the ip addresses of network devices
+#		maddr: displays multicast addresses of network devices
+#		link: displays attributes of network devices
+#		route: displays the routing table
+#		monitor: monitors network devices
+
+#	
