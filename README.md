@@ -8,7 +8,7 @@ NOTE: For the Cyber Security resources, although it will show they are "cpp" fil
 
 Cyber Security Resources: https://github.com/RoyMBull/RB-Educational-Resources/tree/main/Cyber%20Security%20Resources
 
-Security policies and Pen-testing phases
+* Security policies and Pen-testing phases
 Footprinting tools and information gathering 
 Port scanning and Enumeration
 Sniffing and Evasion Techniques 
