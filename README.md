@@ -4,7 +4,7 @@ One of the most difficult things when learning and pursuing Cyber Security, as w
 
 My research also serves as a means to help me backtrack and reference anything I can use to tackle and solve problems, as well as refresh my memory on things I might forget, a handy guide I keep on me at all times and cherish very dearly. It’s well organized, thorough, and well documented, and contains a collective of information on: books I’ve read, quick hand guides I’ve written that thoroughly explain the fundamentals and advanced concepts of programming languages and frameworks I’ve dabbled with, handy library quick references and install scripts, handy manuals on how to install certain compilers and modules, example code, etc etc.
 
-# NOTE: For the Cyber Security resources, although it will show they are "cpp" files, they are in fact just plain text in them. I like writing in Cpp files for the sake of easy organization and commenting features provided by the text editors features. Pay it no mind.
+NOTE: For the Cyber Security resources, although it will show they are "cpp" files, they are in fact just plain text in them. I like writing in Cpp files for the sake of easy organization and commenting features provided by the text editors features. Pay it no mind.
 
 # Cyber Security Resources: 
 
@@ -37,7 +37,6 @@ My research also serves as a means to help me backtrack and reference anything I
 * Intro to WireShark
 
 # Programming Resources: Sample Resources
-https://github.com/RoyMBull/RB-Educational-Resources/tree/main/Programming%20Language%20Intros
 
 * Intro to C
 * Intro to HTML
